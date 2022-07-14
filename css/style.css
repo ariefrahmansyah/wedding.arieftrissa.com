@@ -1450,8 +1450,8 @@ body.offcanvas .oliven-nav-toggle {
 .whenwhere .item .content .tag a:hover {
   color: #bd945a;
 }
-.whenwhere .item .content h5 {
-  font-size: 21px;
+.whenwhere .item .content h4 {
+  font-size: 24px;
   margin-top: 10px;
   margin-bottom: 15px;
   text-transform: uppercase;
