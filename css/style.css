@@ -1256,7 +1256,7 @@ body.offcanvas .oliven-nav-toggle {
   width: 30% !important;
   height: 120px;
   position: absolute;
-  top: 15px;
+  bottom: 15px;
   right: 45px;
   z-index: 3;
 }
@@ -1280,7 +1280,7 @@ body.offcanvas .oliven-nav-toggle {
     width: 30% !important;
     height: 135px;
     position: absolute;
-    top: 40px;
+    bottom: 40px;
     right: 45px;
   }
 }
@@ -1290,7 +1290,7 @@ body.offcanvas .oliven-nav-toggle {
     width: 40% !important;
     height: 120px;
     position: absolute;
-    top: 15px;
+    bottom: 15px;
     right: 45px;
   }
 }
