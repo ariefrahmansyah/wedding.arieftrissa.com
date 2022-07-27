@@ -17,5 +17,5 @@
 
 - Add metadata
 - Add Google Calendar invitation link
-- Add Google Analytics
+- done: Add Google Analytics
 - Remove unused images
