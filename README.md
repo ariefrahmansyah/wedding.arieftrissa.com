@@ -5,7 +5,7 @@
 - Update our story section
 - done: Add gallery section
 - Add prewedding photos to gallery section
-- Add wishes/messages section
+- done: Add wishes/messages section
 
 ## Performance
 
@@ -18,6 +18,6 @@
 
 - done: Add meta tags
 - Add Google Calendar invitation link
-- Add link to location
+- done: Add link to location
 - done: Add Google Analytics
-- Remove unused images
+- done: Remove unused images

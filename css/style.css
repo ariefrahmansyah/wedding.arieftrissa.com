@@ -1338,14 +1338,14 @@ body.offcanvas .oliven-nav-toggle {
 @media screen and (max-width: 991px) {
   .friends .item,
   .friends .toright .info {
-    text-align: center;
+    /* text-align: center; */
   }
   .friends .img {
     margin: auto;
     float: none !important;
   }
   .friends .info {
-    margin: 30px 0 0 0 !important;
+    margin: 0 0 0 0 !important;
   }
 }
 
@@ -2174,4 +2174,15 @@ body.offcanvas .oliven-nav-toggle {
   .bg-fixed {
     background-attachment: scroll !important;
   }
+}
+
+#wishes-list {
+  display: block;
+  height: 640px;
+  overflow: scroll;
+  overflow-x: visible;
+}
+
+#wishes-list::-webkit-scrollbar {
+  width: 5px;
 }

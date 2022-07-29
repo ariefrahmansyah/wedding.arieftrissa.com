@@ -136,6 +136,51 @@
     });
   };
 
+  var loadWishes = function () {
+    function done_func(response) {
+      var data = JSON.parse(response);
+      if (data !== undefined && data.records !== undefined) {
+        dayjs.extend(window.dayjs_plugin_relativeTime);
+
+        var wishesList = $("#wishes-list");
+        wishesList.empty();
+
+        data.records
+          .sort((a, b) => {
+            return new Date(a.createdTime) > new Date(b.createdTime) ? 1 : -1;
+          })
+          .forEach((record) => {
+            wishesList.append(
+              `<div class="col-md-12">
+            <div class="item mb-30">
+              <div class="info valign">
+                <div class="full-width">
+                  <div style="display: flex; align-items: baseline;">
+                    <h6>${record.fields.Name}&nbsp;·&nbsp;</h6>
+                    <p>${dayjs(record.createdTime).fromNow()}</p>
+                  </div>
+                  <p>${record.fields.Wish}</p>
+                </div>
+              </div>
+            </div>
+          </div>`
+            );
+          });
+      }
+    }
+    function fail_func(data) {
+      console.log("fail getting wishes from the server", data);
+    }
+
+    var url = "https://lab.ariefrahmansyah.dev/wedding-api/list";
+    $.ajax({
+      type: "GET",
+      url: url,
+    })
+      .done(done_func)
+      .fail(fail_func);
+  };
+
   // Document on load.
   $(function () {
     fullHeight();
@@ -143,6 +188,7 @@
     burgerMenu();
     mobileMenuOutsideClick();
     sliderMain();
+    loadWishes();
   });
   // Sections background image from data background
   var pageSection = $(".bg-img, section");
@@ -167,10 +213,10 @@
         items: 1,
       },
       600: {
-        items: 2,
+        items: 1,
       },
       1000: {
-        items: 2,
+        items: 1,
       },
     },
   });
@@ -305,10 +351,13 @@
     form_data;
   function done_func(response) {
     message.fadeIn().removeClass("alert-danger").addClass("alert-success");
-    message.text(response);
+    message.text("Thanks for your wishes 💛");
     setTimeout(function () {
       message.fadeOut();
     }, 2000);
+    setTimeout(function () {
+      loadWishes();
+    }, 1000);
     form.find('input:not([type="submit"]), textarea').val("");
   }
   function fail_func(data) {
@@ -320,11 +369,24 @@
   }
   form.submit(function (e) {
     e.preventDefault();
-    form_data = $(this).serialize();
+    form_data = $(this).serializeArray();
+
+    var fields = {};
+    $.map(form_data, function (n) {
+      fields[n["name"]] = n["value"];
+    });
+    fields["CreatedTime"] = new Date().toISOString();
+
+    var payload = {
+      fields: fields,
+    };
+
     $.ajax({
       type: "POST",
       url: form.attr("action"),
-      data: form_data,
+      data: JSON.stringify(payload),
+      dataType: "json",
+      contentType: "application/json",
     })
       .done(done_func)
       .fail(fail_func);

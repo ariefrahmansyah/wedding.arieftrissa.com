@@ -112,9 +112,7 @@
             <!-- <li><a href="#organization">Organization</a></li> -->
             <li><a href="#whenwhere">Wedding Events</a></li>
             <li><a href="#gallery">Gallery</a></li>
-            <!-- <li><a href="#wishes">Wishes</a></li> -->
-            <!-- <li><a href="#rsvp">R.S.V.P</a></li> -->
-            <!-- <li><a href="#gift">Gift Registry</a></li> -->
+            <li><a href="#wishes">Wishes</a></li>
             <!-- <li><a href="blog.html">Blog</a></li> -->
           </ul>
         </nav>
@@ -428,11 +426,13 @@
                       <i class="ti-location-pin"></i>&nbsp; Hotel Santika
                       Premiere Bandara - Palembang
                     </p>
-                    <p><a
-                      href="https://goo.gl/maps/B3nry7JJKhXjbtcs6"
-                      target="_blank"
-                      >See location</a
-                    ></p>
+                    <p>
+                      <a
+                        href="https://goo.gl/maps/B3nry7JJKhXjbtcs6"
+                        target="_blank"
+                        >See location</a
+                      >
+                    </p>
                   </div>
                 </div>
               </div>
@@ -455,11 +455,13 @@
                       <i class="ti-location-pin"></i>&nbsp; Hotel Santika
                       Premiere Bandara - Palembang
                     </p>
-                    <p><a
-                      href="https://goo.gl/maps/B3nry7JJKhXjbtcs6"
-                      target="_blank"
-                      >See location</a
-                    ></p>
+                    <p>
+                      <a
+                        href="https://goo.gl/maps/B3nry7JJKhXjbtcs6"
+                        target="_blank"
+                        >See location</a
+                      >
+                    </p>
                   </div>
                 </div>
               </div>
@@ -596,7 +598,7 @@
         </div>
 
         <!-- Wishes -->
-        <!-- <div id="wishes" class="friends section-padding bg-pink">
+        <div id="wishes" class="friends section-padding bg-pink">
           <div class="container">
             <div class="row">
               <div class="col-md-12 mb-30">
@@ -604,39 +606,90 @@
                 <h2 class="oliven-title mb-30">Thanks for your wishes</h2>
               </div>
             </div>
-            <div class="row">
+
+            <div class="row mb-30" id="wishes-list">
               <div class="col-md-12">
-                <div class="owl-carousel owl-theme">
-                  <div class="item">
-                    <div class="info valign">
-                      <div class="full-width">
-                        <h6>Eleanor Chris</h6>
-                        <p>
-                          Enstibulum eringilla dui athe elitene miss minibus
-                          viverra nectar.
-                        </p>
-                      </div>
+                <div class="item mb-30">
+                  <div class="info valign">
+                    <div class="full-width">
+                      <p>Loading wishes...</p>
                     </div>
                   </div>
-                  <div class="item">
-                    <div class="info valign">
-                      <div class="full-width">
-                        <h6>Stefano Smiht</h6>
-                        <p>
-                          Enstibulum eringilla dui athe elitene miss minibus
-                          viverra nectar.
-                        </p>
-                      </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="item mb-30">
+                  <div class="info valign">
+                    <div class="full-width">
+                      <span class="oliven-title-meta">Add your wishes</span>
+                      <br />
+                      <form
+                        class="contact__form"
+                        method="post"
+                        action="https://lab.ariefrahmansyah.dev/wedding-api/new"
+                      >
+                        <!-- form message -->
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div
+                              class="alert alert-success contact__msg"
+                              style="display: none"
+                              role="alert"
+                            >
+                              Your message was sent successfully.
+                            </div>
+                          </div>
+                        </div>
+                        <!-- form element -->
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div class="form-group">
+                              <input
+                                name="Name"
+                                type="text"
+                                class="form-control"
+                                placeholder="Name"
+                                required
+                              />
+                            </div>
+                          </div>
+                          <div class="col-md-12">
+                            <div class="form-group">
+                              <textarea
+                                name="Wish"
+                                id="message"
+                                cols="30"
+                                rows="7"
+                                class="form-control"
+                                placeholder="Wishes"
+                              ></textarea>
+                            </div>
+                          </div>
+                          <div class="col-md-12">
+                            <div class="form-group">
+                              <input
+                                name="submit"
+                                type="submit"
+                                class="btn buttono"
+                                value="SEND"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </form>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div> -->
+        </div>
 
         <!-- Footer -->
-        <div class="footer2">
+        <div class="footer2 bg-white">
           <div class="oliven-narrow-content">
             <div class="row">
               <div class="col-md-12 text-center">
@@ -665,6 +718,8 @@
     <script src="js/isotope.js"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/plugin/relativeTime.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
