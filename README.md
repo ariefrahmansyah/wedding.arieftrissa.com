@@ -16,7 +16,8 @@
 
 ## Others
 
-- Add metadata
+- done: Add meta tags
 - Add Google Calendar invitation link
+- Add link to location
 - done: Add Google Analytics
 - Remove unused images
