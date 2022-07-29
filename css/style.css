@@ -1550,6 +1550,9 @@ body.offcanvas .oliven-nav-toggle {
   margin-bottom: 15px;
   text-transform: uppercase;
 }
+.whenwhere .item .content p {
+  font-size: 16px;
+}
 .whenwhere .item .content p i {
   color: #bd945a;
 }
