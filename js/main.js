@@ -136,7 +136,7 @@
     });
   };
 
-  var loadWishes = function () {
+  var loadWishes = function (animateNewestWish) {
     function done_func(response) {
       var data = JSON.parse(response);
       if (data !== undefined && data.records !== undefined) {
@@ -147,25 +147,33 @@
 
         data.records
           .sort((a, b) => {
-            return new Date(a.createdTime) > new Date(b.createdTime) ? 1 : -1;
+            return new Date(a.createdTime) < new Date(b.createdTime) ? 1 : -1;
           })
-          .forEach((record) => {
+          .forEach((record, index) => {
             wishesList.append(
-              `<div class="col-md-12">
-            <div class="item mb-30">
-              <div class="info valign">
-                <div class="full-width">
-                  <div style="display: flex; align-items: baseline;">
-                    <h6>${record.fields.Name}&nbsp;·&nbsp;</h6>
-                    <p>${dayjs(record.createdTime).fromNow()}</p>
+              `<div class="col-md-12" ${index === 0 ? 'id="newest-wish"' : ""}>
+                <div class="item ${
+                  index !== data.records.length - 1 ? "mb-30" : ""
+                }">
+                  <div class="info valign">
+                    <div class="full-width">
+                      <div style="display: flex; align-items: baseline;">
+                        <h6>${record.fields.Name}&nbsp;·&nbsp;</h6>
+                        <p>${dayjs(record.createdTime).fromNow()}</p>
+                      </div>
+                      <p>${record.fields.Wish}</p>
+                    </div>
                   </div>
-                  <p>${record.fields.Wish}</p>
                 </div>
-              </div>
-            </div>
-          </div>`
+              </div>`
             );
           });
+
+        if (animateNewestWish) {
+          var newestWish = $("#newest-wish");
+          newestWish.animate({ opacity: "0%" });
+          newestWish.animate({ opacity: "100%" });
+        }
       }
     }
     function fail_func(data) {
@@ -188,7 +196,7 @@
     burgerMenu();
     mobileMenuOutsideClick();
     sliderMain();
-    loadWishes();
+    loadWishes(true);
   });
   // Sections background image from data background
   var pageSection = $(".bg-img, section");
@@ -350,22 +358,18 @@
     message = $(".contact__msg"),
     form_data;
   function done_func(response) {
-    message.fadeIn().removeClass("alert-danger").addClass("alert-success");
-    message.text("Thanks for your wishes 💛");
-    setTimeout(function () {
-      message.fadeOut();
-    }, 2000);
-    setTimeout(function () {
-      loadWishes();
-    }, 1000);
+    loadWishes(true);
     form.find('input:not([type="submit"]), textarea').val("");
+
+    var wishReceived = $("#wish-received");
+    wishReceived.show();
   }
   function fail_func(data) {
-    message.fadeIn().removeClass("alert-success").addClass("alert-success");
-    message.text(data.responseText);
+    message.fadeIn().removeClass("alert-success").addClass("alert-secondary");
+    message.text("Server is busy. Please try again.");
     setTimeout(function () {
       message.fadeOut();
-    }, 2000);
+    }, 3000);
   }
   form.submit(function (e) {
     e.preventDefault();

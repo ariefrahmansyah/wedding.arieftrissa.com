@@ -619,18 +619,6 @@
               </div>
             </div>
 
-            <div class="row mb-30" id="wishes-list">
-              <div class="col-md-12">
-                <div class="item mb-30">
-                  <div class="info valign">
-                    <div class="full-width">
-                      <p>Loading wishes...</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
             <div class="row">
               <div class="col-md-12">
                 <div class="item mb-30">
@@ -643,18 +631,6 @@
                         method="post"
                         action="https://lab.ariefrahmansyah.dev/wedding-api/new"
                       >
-                        <!-- form message -->
-                        <div class="row">
-                          <div class="col-md-12">
-                            <div
-                              class="alert alert-success contact__msg"
-                              style="display: none"
-                              role="alert"
-                            >
-                              Your message was sent successfully.
-                            </div>
-                          </div>
-                        </div>
                         <!-- form element -->
                         <div class="row">
                           <div class="col-md-12">
@@ -688,10 +664,40 @@
                                 class="btn buttono"
                                 value="SEND"
                               />
+                              <span id="wish-received" style="display: none"
+                                ><p>
+                                  &nbsp;&nbsp;Your wish is well received by us.
+                                  Thank you so much! 💛
+                                </p></span
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <!-- form message -->
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div
+                              class="alert alert-success contact__msg"
+                              style="display: none"
+                              role="alert"
+                            >
+                              Your message was sent successfully.
                             </div>
                           </div>
                         </div>
                       </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mb-30" id="wishes-list">
+              <div class="col-md-12">
+                <div class="item mb-30">
+                  <div class="info valign">
+                    <div class="full-width">
+                      <p>Loading wishes...</p>
                     </div>
                   </div>
                 </div>
