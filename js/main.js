@@ -171,8 +171,8 @@
 
         if (animateNewestWish) {
           var newestWish = $("#newest-wish");
-          newestWish.animate({ opacity: "0%" });
-          newestWish.animate({ opacity: "100%" });
+          newestWish.animate({ opacity: "5%" }, 500);
+          newestWish.animate({ opacity: "100%" }, 1000);
         }
       }
     }
