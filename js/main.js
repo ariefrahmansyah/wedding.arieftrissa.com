@@ -149,6 +149,12 @@
           .sort((a, b) => {
             return new Date(a.createdTime) < new Date(b.createdTime) ? 1 : -1;
           })
+          .filter((record) => {
+            return (
+              record.fields.Flagged === undefined ||
+              record.fields.Flagged === false
+            );
+          })
           .forEach((record, index) => {
             wishesList.append(
               `<div class="col-md-12" ${index === 0 ? 'id="newest-wish"' : ""}>
