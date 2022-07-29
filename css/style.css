@@ -1311,7 +1311,7 @@ body.offcanvas .oliven-nav-toggle {
   float: left;
 }
 .friends .info {
-  margin-left: 160px;
+  /* margin-left: 160px; */
 }
 .friends .info h6 {
   font-size: 24px;

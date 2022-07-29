@@ -3,7 +3,8 @@
 ## Website
 
 - Update our story section
-- Add gallery section
+- done: Add gallery section
+- Add prewedding photos to gallery section
 - Add wishes/messages section
 
 ## Performance
