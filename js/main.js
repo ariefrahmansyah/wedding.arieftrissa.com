@@ -163,10 +163,11 @@
                 }">
                   <div class="info valign">
                     <div class="full-width">
-                      <div style="display: flex; align-items: baseline;">
-                        <h6>${record.fields.Name}&nbsp;·&nbsp;</h6>
-                        <p>${dayjs(record.createdTime).fromNow()}</p>
-                      </div>
+                      <span><h6>${record.fields.Name}</h6></span>
+                      <span><h6>·</h6></span>
+                      <span><p>${dayjs(
+                        record.fields.CreatedTime
+                      ).fromNow()}</p></span>
                       <p>${record.fields.Wish}</p>
                     </div>
                   </div>
