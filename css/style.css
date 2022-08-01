@@ -958,7 +958,7 @@ body.offcanvas .oliven-nav-toggle {
 .oliven-hero .flexslider .slider-text > .slider-text-inner h6,
 .oliven-hero .flexslider .slider-text > .slider-text-inner h6 {
   font-family: "Nunito Sans", sans-serif;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 400;
   letter-spacing: 5px;
   margin-bottom: 0;
@@ -973,7 +973,7 @@ body.offcanvas .oliven-nav-toggle {
   font-family: "Alex Brush", cursive;
   font-weight: 400;
   margin: 0 0 15px 0;
-  font-size: 120px;
+  font-size: 96px;
   /* color: #fff; */
   /* color: #bd945a; */
   display: block;
@@ -993,7 +993,7 @@ body.offcanvas .oliven-nav-toggle {
   }
   .oliven-hero .flexslider .slider-text > .slider-text-inner h6,
   .oliven-hero .flexslider .slider-text > .slider-text-inner h6 {
-    font-size: 12px;
+    font-size: 16px;
   }
   .oliven-hero .flexslider .slider-text > .slider-text-inner h2,
   .oliven-hero .flexslider .slider-text > .slider-text-inner h2 b,
@@ -1041,7 +1041,7 @@ body.offcanvas .oliven-nav-toggle {
   top: 12px;
   font-family: "Alex Brush", cursive;
   font-weight: 400;
-  font-size: 60px;
+  font-size: 52px;
   color: #bd945a;
   line-height: 1.5em;
   margin-bottom: 5px;
@@ -1050,7 +1050,7 @@ body.offcanvas .oliven-nav-toggle {
   color: #000;
   font-family: "Cormorant Garamond", serif;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 36px;
   margin-bottom: 0;
 }
 .oliven-title-meta {
@@ -2160,7 +2160,7 @@ body.offcanvas .oliven-nav-toggle {
     margin-bottom: 15px;
   }
   .oliven-couple-subtitle {
-    font-size: 18px;
+    font-size: 24px;
   }
   #countdown .section-head h4 {
     font-size: 32px;
