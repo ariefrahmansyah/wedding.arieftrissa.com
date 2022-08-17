@@ -2225,8 +2225,8 @@ body.offcanvas .oliven-nav-toggle {
 #music-controller::before {
   content: "";
   border-radius: 1000px;
-  min-width: calc(300px + 12px);
-  min-height: calc(60px + 12px);
+  width: 30px;
+  height: 30px;
   border: 6px solid #bd945a;
   box-shadow: 0 0 60px rgba(0, 255, 203, 0.64);
   position: absolute;

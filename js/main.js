@@ -29,6 +29,7 @@
   // Preloader
   $(window).load(function () {
     $(".preloader").fadeOut("slow");
+    playPauseToggle();
   });
 
   // Full Height
@@ -444,7 +445,6 @@
 })();
 
 function playPauseToggle() {
-  console.log("HMM");
   let track = document.getElementById("track");
   var icon = $("#music-controller-icon");
   if (track.paused) {
