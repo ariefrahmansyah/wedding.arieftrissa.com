@@ -120,12 +120,24 @@
         <!-- Sidebar Footer -->
         <div class="footer1">
           <span class="separator"></span>
-          <p>Arief & Trissa's wedding<br />3 September 2022, Palembang</p>
+          <p>Arief Trissa wedding<br />3 September 2022, Palembang</p>
         </div>
       </aside>
 
       <!-- Content Section -->
       <div id="oliven-main">
+        <!-- Play button -->
+        <div id="music-controller-container">
+          <div class="container-fluid">
+            <audio id="track" autoplay loop>
+              <source src="/musics/500miles.mp3" type="audio/mpeg" />
+            </audio>
+            <button id="music-controller" onclick="playPauseToggle()">
+              <i id="music-controller-icon" class="ti-control-pause"></i>
+            </button>
+          </div>
+        </div>
+
         <!-- Slider -->
         <div id="home">
           <div class="oliven-hero js-fullheight">
@@ -724,10 +736,8 @@
             <div class="row">
               <div class="col-md-12 text-center">
                 <h2>
-                  <a href="index.html">
-                    <img src="images/logo.webp" alt="" />
-                    <span>Arief <small>&</small> Trissa</span>
-                  </a>
+                  <img src="images/logo.webp" alt="" />
+                  <span>Arief <small>&</small> Trissa</span>
                 </h2>
                 <p class="copyright">3 September 2022, Palembang</p>
               </div>
