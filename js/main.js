@@ -29,7 +29,6 @@
   // Preloader
   $(window).load(function () {
     $(".preloader").fadeOut("slow");
-    playPauseToggle();
   });
 
   // Full Height
