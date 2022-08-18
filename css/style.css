@@ -2220,6 +2220,7 @@ body.offcanvas .oliven-nav-toggle {
 #music-controller:hover {
   background-color: #bd945a;
   color: #ffffff;
+  opacity: 0.9;
 }
 
 #music-controller::before {
@@ -2227,8 +2228,9 @@ body.offcanvas .oliven-nav-toggle {
   border-radius: 1000px;
   width: 30px;
   height: 30px;
+  background-color: #bd945a;
   border: 6px solid #bd945a;
-  box-shadow: 0 0 60px rgba(0, 255, 203, 0.64);
+  box-shadow: 0 0 60px #bd945a;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -2240,6 +2242,7 @@ body.offcanvas .oliven-nav-toggle {
   content: "";
   width: 30px;
   height: 30px;
+  background-color: #bd945a;
   border-radius: 100%;
   border: 6px solid #bd945a;
   position: absolute;
