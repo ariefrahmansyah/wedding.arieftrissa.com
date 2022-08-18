@@ -2262,7 +2262,9 @@ body.offcanvas .oliven-nav-toggle {
   100% {
     width: 75px;
     height: 75px;
-    opacity: 0;
+    opacity: 0.1;
+    background-color: transparent;
+    border-color: transparent;
   }
 }
 
@@ -2271,18 +2273,5 @@ body.offcanvas .oliven-nav-toggle {
     bottom: 0px;
     margin-bottom: 15px;
     margin-left: 0px;
-  }
-
-  @keyframes ring {
-    0% {
-      width: 30px;
-      height: 30px;
-      opacity: 1;
-    }
-    100% {
-      width: 70px;
-      height: 70px;
-      opacity: 0;
-    }
   }
 }
