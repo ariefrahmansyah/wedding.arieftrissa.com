@@ -454,3 +454,32 @@ function playPauseToggle() {
     icon.attr("class", "ti-music-alt");
   }
 }
+
+(function () {
+  function onPlayerStateChange(event) {
+    let track = document.getElementById("track");
+    var ctrl = $("#music-controller-container");
+    var icon = $("#music-controller-icon");
+
+    if (event.data === 1) {
+      track.pause();
+      icon.attr("class", "ti-music-alt");
+      ctrl.fadeOut(1000);
+    } else {
+      ctrl.fadeIn(1000);
+    }
+  }
+
+  var player;
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player("prewedding-player", {
+      events: {
+        onStateChange: onPlayerStateChange,
+      },
+    });
+  }
+
+  window.onYouTubePlayerAPIReady = function () {
+    onYouTubeIframeAPIReady();
+  };
+})();

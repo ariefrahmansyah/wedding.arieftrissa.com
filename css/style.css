@@ -2221,6 +2221,14 @@ body.offcanvas .oliven-nav-toggle {
   background-color: #bd945a;
   color: #ffffff;
   opacity: 0.9;
+  outline: none;
+  border-bottom: none !important;
+}
+
+#music-controller:focus,
+#music-controller:active {
+  outline: none;
+  border-bottom: none !important;
 }
 
 #music-controller::before {
