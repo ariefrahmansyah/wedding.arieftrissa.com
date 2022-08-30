@@ -470,9 +470,14 @@ function playPauseToggle() {
     }
   }
 
-  var player;
   function onYouTubeIframeAPIReady() {
-    player = new YT.Player("prewedding-player", {
+    new YT.Player("engagement-player", {
+      events: {
+        onStateChange: onPlayerStateChange,
+      },
+    });
+
+    new YT.Player("prewedding-player", {
       events: {
         onStateChange: onPlayerStateChange,
       },
