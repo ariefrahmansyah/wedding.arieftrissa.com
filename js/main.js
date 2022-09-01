@@ -136,6 +136,71 @@
     });
   };
 
+  var loadGallery = function () {
+    var images = [
+      {
+        src: "/images/gallery/1.webp",
+        detail: "Engagement",
+      },
+      {
+        src: "/images/gallery/2.webp",
+        detail: "Engagement",
+      },
+      {
+        src: "/images/gallery/3.webp",
+        detail: "Engagement",
+      },
+      {
+        src: "/images/gallery/4.webp",
+        detail: "Engagement",
+      },
+      {
+        src: "/images/gallery/5.webp",
+        detail: "Engagement",
+      },
+      {
+        src: "/images/gallery/6.webp",
+        detail: "Engagement",
+      },
+    ];
+
+    var galleryRow = $("#gallery-row");
+    galleryRow.empty();
+
+    images.forEach((image) => {
+      galleryRow.append(`
+        <div class="col-md-4 gallery-item ${image.detail.toLowerCase()}">
+          <a href="${image.src}" class="img-zoom">
+            <div class="gallery-box">
+              <div class="gallery-img">
+                <img
+                  src="${image.src}"
+                  class="img-fluid mx-auto d-block"
+                  alt=""
+                />
+              </div>
+              <div class="gallery-detail">
+                <h4 class="mb-0">${image.detail}</h4>
+              </div>
+            </div>
+          </a>
+        </div>
+      `);
+    });
+
+    // Magnific Popup
+    $(".img-zoom").magnificPopup({
+      type: "image",
+      closeOnContentClick: !0,
+      mainClass: "mfp-fade",
+      gallery: {
+        enabled: !0,
+        navigateByImgClick: !0,
+        preload: [0, 1],
+      },
+    });
+  };
+
   var loadWishes = function (animateNewestWish) {
     function done_func(response) {
       var data = JSON.parse(response);
@@ -168,7 +233,7 @@
                       <span><p>${dayjs(
                         record.fields.CreatedTime
                       ).fromNow()}</p></span>
-                      <p>${record.fields.Wish}</p>
+                      <p>${record.fields.Wish ? record.fields.Wish : ""}</p>
                     </div>
                   </div>
                 </div>
@@ -203,6 +268,7 @@
     burgerMenu();
     mobileMenuOutsideClick();
     sliderMain();
+    loadGallery();
     loadWishes(true);
   });
   // Sections background image from data background
@@ -347,17 +413,6 @@
           !1
         );
       });
-  });
-  // Magnific Popup
-  $(".img-zoom").magnificPopup({
-    type: "image",
-    closeOnContentClick: !0,
-    mainClass: "mfp-fade",
-    gallery: {
-      enabled: !0,
-      navigateByImgClick: !0,
-      preload: [0, 1],
-    },
   });
 
   // RSVP FORM
