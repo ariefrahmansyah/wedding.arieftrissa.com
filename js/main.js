@@ -473,30 +473,31 @@
       let now = new Date().getTime(),
         distance = countDown - now;
 
-      (document.getElementById("days").innerText = Math.floor(distance / day)),
-        (document.getElementById("hours").innerText = Math.floor(
-          (distance % day) / hour
-        )),
-        (document.getElementById("minutes").innerText = Math.floor(
-          (distance % hour) / minute
-        )),
-        (document.getElementById("seconds").innerText = Math.floor(
-          (distance % minute) / second
-        ));
-
-      //do something later when date is reached
       if (distance < 0) {
-        let headline = document.getElementById("headline"),
-          countdown = document.getElementById("countdown"),
-          content = document.getElementById("content");
+        let headline = document.getElementById("countdown-headline");
+        headline.innerText = "We have been married for";
 
-        headline.innerText = "It's our wedding!";
-        countdown.style.display = "none";
-        content.style.display = "block";
+        let gettingMarried1 = document.getElementById("getting-married-1");
+        gettingMarried1.innerText = "Are married!";
+        let gettingMarried2 = document.getElementById("getting-married-2");
+        gettingMarried2.innerText = "Are married!";
 
-        clearInterval(x);
+        let seeyou = document.getElementById("seeyou");
+        seeyou.style.display = "none";
+
+        distance = Math.abs(distance);
       }
-      //seconds
+
+      document.getElementById("days").innerText = Math.floor(distance / day);
+      document.getElementById("hours").innerText = Math.floor(
+        (distance % day) / hour
+      );
+      document.getElementById("minutes").innerText = Math.floor(
+        (distance % hour) / minute
+      );
+      document.getElementById("seconds").innerText = Math.floor(
+        (distance % minute) / second
+      );
     }, 0);
 })();
 
@@ -528,6 +529,12 @@ function playPauseToggle() {
   }
 
   function onYouTubeIframeAPIReady() {
+    new YT.Player("live-player", {
+      events: {
+        onStateChange: onPlayerStateChange,
+      },
+    });
+
     new YT.Player("engagement-player", {
       events: {
         onStateChange: onPlayerStateChange,
