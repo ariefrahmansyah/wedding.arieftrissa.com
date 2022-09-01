@@ -139,28 +139,30 @@
   var loadGallery = function () {
     var images = [
       {
-        src: "/images/gallery/1.webp",
+        src: "/images/gallery/engagement-sit.webp",
         detail: "Engagement",
       },
       {
-        src: "/images/gallery/2.webp",
+        src: "/images/gallery/engagement-hand.webp",
         detail: "Engagement",
       },
       {
-        src: "/images/gallery/3.webp",
+        src: "/images/gallery/prewedding-sit.webp",
+        detail: "Prewedding",
+      },
+
+      {
+        src: "/images/gallery/engagement-green.webp",
         detail: "Engagement",
       },
+
       {
-        src: "/images/gallery/4.webp",
-        detail: "Engagement",
+        src: "/images/gallery/prewedding-green.webp",
+        detail: "Prewedding",
       },
       {
-        src: "/images/gallery/5.webp",
-        detail: "Engagement",
-      },
-      {
-        src: "/images/gallery/6.webp",
-        detail: "Engagement",
+        src: "/images/gallery/prewedding-stand.webp",
+        detail: "Prewedding",
       },
     ];
 

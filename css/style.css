@@ -356,11 +356,17 @@ input[type="radio"]:checked:before {
 .mb-0 {
   margin-bottom: 0;
 }
+.mb-15 {
+  margin-bottom: 15px;
+}
 .mb-30 {
   margin-bottom: 30px;
 }
 .mb-60 {
   margin-bottom: 60px;
+}
+.mt-15 {
+  margin-top: 15px;
 }
 /* important */
 .container-fluid {
