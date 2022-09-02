@@ -137,61 +137,6 @@
   };
 
   var loadGallery = function () {
-    var images = [
-      {
-        src: "/images/gallery/engagement-sit.webp",
-        detail: "Engagement",
-      },
-      {
-        src: "/images/gallery/engagement-hand.webp",
-        detail: "Engagement",
-      },
-      {
-        src: "/images/gallery/prewedding-sit.webp",
-        detail: "Prewedding",
-      },
-
-      {
-        src: "/images/gallery/engagement-green.webp",
-        detail: "Engagement",
-      },
-
-      {
-        src: "/images/gallery/prewedding-green.webp",
-        detail: "Prewedding",
-      },
-      {
-        src: "/images/gallery/prewedding-stand.webp",
-        detail: "Prewedding",
-      },
-    ];
-
-    var galleryRow = $("#gallery-row");
-    galleryRow.empty();
-
-    images.forEach((image) => {
-      galleryRow.append(`
-        <div class="col-md-4 gallery-item ${image.detail.toLowerCase()}">
-          <a href="${image.src}" class="img-zoom">
-            <div class="gallery-box">
-              <div class="gallery-img">
-                <img
-                  src="${image.src}"
-                  class="img-fluid mx-auto d-block"
-                  alt=""
-                />
-              </div>
-              <div class="gallery-detail">
-                <h4 class="mb-0">${image.detail}</h4>
-              </div>
-            </div>
-          </a>
-        </div>
-      `);
-    });
-
-    galleryRow.fadeIn(1000);
-
     // Magnific Popup
     $(".img-zoom").magnificPopup({
       type: "image",
