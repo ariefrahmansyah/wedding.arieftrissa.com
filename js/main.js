@@ -190,6 +190,8 @@
       `);
     });
 
+    galleryRow.fadeIn(1000);
+
     // Magnific Popup
     $(".img-zoom").magnificPopup({
       type: "image",
