@@ -201,7 +201,7 @@
       console.log("fail getting wishes from the server", data);
     }
 
-    var url = "https://lab.ariefrahmansyah.dev/wedding-api/list";
+    var url = "https://labs.ariefrahmansyah.dev/wedding-wishes/list";
     $.ajax({
       type: "GET",
       url: url,
