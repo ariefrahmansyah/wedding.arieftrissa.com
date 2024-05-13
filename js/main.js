@@ -152,7 +152,7 @@
 
   var loadWishes = function (animateNewestWish) {
     function done_func(response) {
-      var data = JSON.parse(response);
+      var data = response;
       if (data !== undefined && data.records !== undefined) {
         dayjs.extend(window.dayjs_plugin_relativeTime);
 
@@ -172,16 +172,15 @@
           .forEach((record, index) => {
             wishesList.append(
               `<div class="col-md-12" ${index === 0 ? 'id="newest-wish"' : ""}>
-                <div class="item ${
-                  index !== data.records.length - 1 ? "mb-30" : ""
-                }">
+                <div class="item ${index !== data.records.length - 1 ? "mb-30" : ""
+              }">
                   <div class="info valign">
                     <div class="full-width">
                       <span><h6>${record.fields.Name}</h6></span>
                       <span><h6>·</h6></span>
                       <span><p>${dayjs(
-                        record.fields.CreatedTime
-                      ).fromNow()}</p></span>
+                record.fields.CreatedTime
+              ).fromNow()}</p></span>
                       <p>${record.fields.Wish ? record.fields.Wish : ""}</p>
                     </div>
                   </div>
@@ -201,7 +200,7 @@
       console.log("fail getting wishes from the server", data);
     }
 
-    var url = "https://labs.ariefrahmansyah.dev/wedding-wishes/list";
+    var url = "/wedding-wishes-list.json";
     $.ajax({
       type: "GET",
       url: url,
@@ -300,7 +299,7 @@
       // On-page links
       if (
         location.pathname.replace(/^\//, "") ==
-          this.pathname.replace(/^\//, "") &&
+        this.pathname.replace(/^\//, "") &&
         location.hostname == this.hostname
       ) {
         // Figure out element to scroll to
